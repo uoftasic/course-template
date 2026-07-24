@@ -1,0 +1,65 @@
+/* Readable default UI for course / lab docs */
+:root {
+  /* UofT ASIC-leaning teal (not the default Docsify green) */
+  --theme-color: #0b5f8a;
+  --content-max-width: 800px;
+}
+
+body {
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  color: #1f2933;
+}
+
+.sidebar {
+  background: #f7fafc;
+}
+
+.sidebar-nav > ul > li > p {
+  margin: 0.75em 0 0.25em;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #627d98;
+}
+
+.markdown-section {
+  max-width: var(--content-max-width);
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.markdown-section code {
+  background: #eef2f6;
+  color: #243b53;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+.markdown-section pre > code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-section img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.markdown-section blockquote {
+  border-left-color: var(--theme-color);
+  background: #f0f7fa;
+  color: #334e68;
+}
+
+/* MathJax breathing room */
+.markdown-section mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}

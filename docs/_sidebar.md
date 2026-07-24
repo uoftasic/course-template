@@ -1,0 +1,11 @@
+- [Home](/)
+- **Guide**
+  - [Getting started](guide/getting-started.md)
+  - [Contributing to docs](CONTRIBUTING-DOCS.md)
+- **Reference**
+  - [Notation](reference/notation.md)
+- **Labs**
+  - [Lab 01 overview](labs/lab-01-overview.md)
+- **Repo**
+  - [Scripts](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/scripts)
+  - [Lab packages](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs)

@@ -1,0 +1,31 @@
+# Optional: markdown link check for docs/**
+name: Docs link check
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs-link-check.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs-link-check.yml"
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Skip unresolved course tokens and localhost preview links
+          args: >-
+            --verbose
+            --no-progress
+            --exclude-mail
+            --exclude '\{\{[A-Z_]+\}\}'
+            --exclude 'localhost'
+            'docs/**/*.md'
+          fail: true
