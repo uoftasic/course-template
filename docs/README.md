@@ -12,7 +12,6 @@ Part of the **UofT ASIC Team** education materials. This site is the published d
 | Lab 01 writeup | [labs/lab-01-overview.md](labs/lab-01-overview.md) |
 | Lab packages | [labs/](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs) |
 | Scripts | [scripts/](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/scripts) |
-| Shared workbench | [asic-edu-workbench](https://github.com/uoftasic/asic-edu-workbench) |
 
 ## Math
 

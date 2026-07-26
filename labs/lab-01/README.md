@@ -29,6 +29,6 @@ python3 src/main.py
 
 ## Notes
 
-- Prefer the shared [asic-edu-workbench](https://github.com/uoftasic/asic-edu-workbench) for LibreLane / SKY130 flows.
+- Prefer the team IIC-OSIC-TOOLS / SKY130 workbench for LibreLane flows when this course needs it.
 - Keep large binaries out of git; use Git LFS when needed.
 - Solution keys in `solutions/` only if policy allows; gitignore on student forks when appropriate.

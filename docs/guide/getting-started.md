@@ -62,7 +62,7 @@ See [Contributing to docs](../CONTRIBUTING-DOCS.md).
 
 **Separation:** `docs/labs/` = theory / procedure. `labs/` = HDL, Python, data (not published by Pages).
 
-For LibreLane / SKY130 / IIC-OSIC-TOOLS workflows, use the shared [workbench](https://github.com/uoftasic/asic-edu-workbench).
+For LibreLane / SKY130 / IIC-OSIC-TOOLS workflows, follow the course-specific workbench instructions (do not bundle Docker in every course repo).
 
 ## 6. Smoke checks
 

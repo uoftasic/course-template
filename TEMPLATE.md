@@ -43,8 +43,4 @@ Prefer course ids already used by the team (`ic###`, `ad###`, `dd###`) or a clea
 
 ## Related
 
-| Repo | Role |
-|------|------|
-| [asic-edu-workbench](https://github.com/uoftasic/asic-edu-workbench) | Shared local toolchain (IIC-OSIC-TOOLS) |
-
-This Docsify template gives zero-build docs under `docs/` plus first-class `labs/` and `scripts/` trees. Each course publishes at `https://uoftasic.github.io/<course-id>/`.
+Each course from this template publishes at `https://uoftasic.github.io/<course-id>/` with zero-build Docsify docs under `docs/` and first-class `labs/` / `scripts/` trees.

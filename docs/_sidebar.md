@@ -1,4 +1,4 @@
-- [Home](/)
+- [Home](README.md)
 - **Guide**
   - [Getting started](guide/getting-started.md)
   - [Contributing to docs](CONTRIBUTING-DOCS.md)

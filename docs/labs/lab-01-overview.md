@@ -6,7 +6,7 @@ Short writeup for the published docs site. Full runnable content: [`labs/lab-01/
 
 - Python 3.10+ on your machine
 - Clone of `uoftasic/{{COURSE_ID}}`
-- For EDA-heavy follow-ons: [asic-edu-workbench](https://github.com/uoftasic/asic-edu-workbench) (not required for this starter)
+- For EDA-heavy follow-ons: course workbench / IIC-OSIC-TOOLS (not required for this starter)
 
 ## Objectives
 

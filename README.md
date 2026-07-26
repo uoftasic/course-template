@@ -45,7 +45,7 @@ python3 scripts/hello.py
 python3 labs/lab-01/src/main.py
 ```
 
-Tool-heavy courses that need IIC-OSIC-TOOLS / SKY130 should point students at [`asic-edu-workbench`](https://github.com/uoftasic/asic-edu-workbench) rather than bundling Docker here.
+Tool-heavy courses that need IIC-OSIC-TOOLS / SKY130 should document the team workbench setup in-course rather than bundling Docker in every repo.
 
 ## Layout
 

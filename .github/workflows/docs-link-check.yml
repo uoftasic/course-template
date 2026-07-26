@@ -20,12 +20,13 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2
         with:
-          # Skip unresolved course tokens and localhost preview links
+          # lychee >=0.20: mail off by default (--exclude-mail removed)
+          # %7B%7B matches URL-encoded {{COURSE_*}} placeholders still in the template
           args: >-
             --verbose
             --no-progress
-            --exclude-mail
-            --exclude '\{\{[A-Z_]+\}\}'
+            --root-dir 'docs'
+            --exclude '%7B%7B'
             --exclude 'localhost'
             'docs/**/*.md'
           fail: true
