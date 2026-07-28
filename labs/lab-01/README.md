@@ -6,7 +6,7 @@ Starter lab package for **{{COURSE_TITLE}}** (`uoftasic/{{COURSE_ID}}`).
 
 - Site path: `/#/labs/lab-01-overview`
 - Source: [`docs/labs/lab-01-overview.md`](../../docs/labs/lab-01-overview.md)
-- Live: `https://uoftasic.github.io/{{COURSE_ID}}/#/labs/lab-01-overview`
+- Live: `https://uoftasic.com/{{COURSE_ID}}/#/labs/lab-01-overview`
 
 ## Layout
 

@@ -32,7 +32,7 @@ Dry run: add `--dry-run`.
 - [ ] `scripts/init-template.py` run (or manual replace of the three tokens)
 - [ ] Pushed to `main`
 - [ ] Pages: **Settings → Pages → `main` / `/docs`**
-- [ ] Live: `https://uoftasic.github.io/<course-id>/`
+- [ ] Live: `https://uoftasic.com/<course-id>/` (org Pages; hub: https://edu.uoftasic.com/)
 - [ ] Sidebar navigates Home → Getting started → Lab 01
 - [ ] Math + sample figure render on the home page
 - [ ] (Maintainers of this template) **Settings → Template repository** enabled
@@ -43,4 +43,4 @@ Prefer course ids already used by the team (`ic###`, `ad###`, `dd###`) or a clea
 
 ## Related
 
-Each course from this template publishes at `https://uoftasic.github.io/<course-id>/` with zero-build Docsify docs under `docs/` and first-class `labs/` / `scripts/` trees.
+Each course from this template publishes at `https://uoftasic.com/<course-id>/` with zero-build Docsify docs under `docs/` and first-class `labs/` / `scripts/` trees. The education hub is https://edu.uoftasic.com/.

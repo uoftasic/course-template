@@ -32,7 +32,7 @@ Details: [TEMPLATE.md](https://github.com/uoftasic/{{COURSE_ID}}/blob/main/TEMPL
 4. Site URL:
 
 ```text
-https://uoftasic.github.io/{{COURSE_ID}}/
+https://uoftasic.com/{{COURSE_ID}}/
 ```
 
 No Actions workflow is required for the baseline Docsify site.

@@ -8,9 +8,13 @@ Org: [github.com/uoftasic](https://github.com/uoftasic)
 
 ## Live docs
 
-After Pages is enabled:
+**This template:** https://uoftasic.com/course-template/
 
-**https://uoftasic.github.io/{{COURSE_ID}}/**
+**Education hub:** https://edu.uoftasic.com/
+
+After Pages is enabled on a course repo created from this template:
+
+**https://uoftasic.com/{{COURSE_ID}}/**
 
 ## Use this template
 

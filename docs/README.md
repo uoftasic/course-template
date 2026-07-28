@@ -4,6 +4,8 @@
 
 Part of the **UofT ASIC Team** education materials. This site is the published documentation; runnable labs and scripts live in the [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) (not under `docs/`).
 
+Education hub: [edu.uoftasic.com](https://edu.uoftasic.com/).
+
 ## Quick links
 
 | What | Where |
