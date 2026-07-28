@@ -74,7 +74,7 @@ No Actions deploy step is required for the baseline Docsify site.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/CONTRIBUTING-DOCS.md](docs/CONTRIBUTING-DOCS.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

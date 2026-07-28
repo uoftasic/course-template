@@ -52,7 +52,7 @@ Open [http://localhost:3000](http://localhost:3000).
 3. Prefer relative links: `guide/yosys-basics.md`.
 4. Put figures in `docs/assets/img/`.
 
-See [Contributing to docs](../CONTRIBUTING-DOCS.md).
+Conventions for docs and labs: [CONTRIBUTING.md](https://github.com/uoftasic/{{COURSE_ID}}/blob/main/CONTRIBUTING.md).
 
 ## 5. Add a lab
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Replace course placeholders after creating a repo from the UofT ASIC template."""
+"""Replace course placeholders after creating a repo from the UofT ASIC template.
+
+Fills {{COURSE_ID}}, {{COURSE_TITLE}}, and {{DESCRIPTION}} only.
+Does not scaffold or remove docs pages — keep the published site barebones.
+"""
 
 from __future__ import annotations
 
