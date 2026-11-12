@@ -24,5 +24,5 @@ If pip stops with `error: externally-managed-environment`, Part 1 of the writeup
 |------|------------|
 | `src/main.py` | Starter entry point; prints `lab-01 ready` and a checksum |
 | `data/` | Lab-local inputs (empty in the starter) |
-| `results/` | Optional baselines and your local outputs (empty in the starter) |
+| `results/` | Your local outputs, and any baseline outputs you keep to compare against (empty in the starter) |
 | `requirements.txt` | Python dependencies (empty in the starter) |

@@ -17,7 +17,7 @@ The [course path](README.md) on the home page lists every page in the order you 
 - A *Read* row points to guide pages like this one. They explain the ideas with figures and worked examples. You don't need a terminal open to read them.
 - A *Do* row points to a lab writeup. Labs are where you run things. Each lab is split into numbered parts, and each part ends with what you should see if it worked.
 
-The files a lab runs (code, data and checkers) are in the course's [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) under `labs/`. This site only has the writeups. You'll run your first script, `labs/lab-01/src/main.py`, in [Lab 01](labs/lab-01-overview.md), Part 2.
+The files a lab runs (code, data, and any scripts that check your results) are in the course's [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) under `labs/`. This site only has the writeups. You'll run your first script, `labs/lab-01/src/main.py`, in [Lab 01](labs/lab-01-overview.md), Part 2.
 
 ## Math and figures
 

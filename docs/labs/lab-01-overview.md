@@ -37,17 +37,18 @@ Time: about _N_ minutes.
    python3 -m pip install -r requirements.txt
    ```
 
+   If pip stops with `error: externally-managed-environment`, your system Python doesn't let pip install into it (the system Python on Ubuntu 24.04 does this). Make a virtual environment in the lab folder and run the install inside it:
+
+   ```bash
+   sudo apt install python3-venv   # Ubuntu only: python3 -m venv needs this package
+   python3 -m venv .venv
+   . .venv/bin/activate
+   python3 -m pip install -r requirements.txt
+   ```
+
+   If you open a new terminal before Part 2, run `. .venv/bin/activate` in it again.
+
 You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so nothing gets installed.
-
-If pip stops with `error: externally-managed-environment`, your system Python doesn't let pip install into it (the system Python on Ubuntu 24.04 does this). Make a virtual environment in the lab folder and run the install inside it:
-
-```bash
-python3 -m venv .venv      # on Ubuntu, install the python3-venv package first
-. .venv/bin/activate
-python3 -m pip install -r requirements.txt
-```
-
-If you open a new terminal before Part 2, run `. .venv/bin/activate` in it again.
 
 ## Part 2: Run the starter
 
@@ -72,4 +73,4 @@ checksum=13
 
 You're done when `python3 src/main.py` prints the two lines in Part 2. There is nothing to submit for this lab.
 
-Outputs from a lab go in its `results/` folder (here `labs/lab-01/results/`), never in `docs/`.
+This starter doesn't write any files. When a lab does write large outputs, such as GDS files or waveform dumps, keep them in its `results/` folder (here `labs/lab-01/results/`) and out of `docs/`. Use Git LFS if you need to share them.
