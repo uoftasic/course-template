@@ -68,7 +68,7 @@ Don't paste long HDL into Docsify pages. Link to the files under `labs/` instead
 3. Put images in `docs/assets/img/`.
 4. Link to `labs/` and `scripts/` with GitHub URLs (`https://github.com/uoftasic/<course-id>/tree/main/labs/...`).
 
-Docsify runs with `relativePath: false`. With that setting, page links and images resolve from different places:
+Docsify runs with `relativePath: false`, its default (`docs/index.html` doesn't change it). With that setting, page links and images resolve from different places:
 
 - Links to other pages are relative to `docs/`, from any page: `guide/yosys-synth.md`, `labs/lab-01-overview.md`.
 - Images are relative to the page they're on: `../assets/img/foo.png` from a page in `docs/guide/` or `docs/labs/`, and `assets/img/foo.png` from `docs/README.md`.
