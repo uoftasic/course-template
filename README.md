@@ -2,24 +2,20 @@
 
 {{DESCRIPTION}}
 
-Docsify course / lab template for the **UofT ASIC Team** (`uoftasic`). Published docs live under `./docs`; runnable labs, scripts, notebooks, and data stay in the repo root. Zero build for GitHub Pages — Markdown, MathJax, and images work out of the box.
+This is the Docsify course and lab template for the UofT ASIC Team (`uoftasic`). The published site lives under `./docs`. Runnable labs, scripts, notebooks and data stay outside it, in the repo root. GitHub Pages serves the site with no build step, and Markdown, MathJax and images work as they are.
 
 Org: [github.com/uoftasic](https://github.com/uoftasic)
 
 ## Live docs
 
-**This template:** https://uoftasic.com/course-template/
-
-**Education hub:** https://edu.uoftasic.com/
-
-After Pages is enabled on a course repo created from this template:
-
-**https://uoftasic.com/{{COURSE_ID}}/**
+- This template: https://uoftasic.com/course-template/
+- Education hub: https://edu.uoftasic.com/
+- A course made from this template, once Pages is enabled: https://uoftasic.com/{{COURSE_ID}}/
 
 ## Use this template
 
-1. On [uoftasic/course-template](https://github.com/uoftasic/course-template), click **Use this template** → create a repo named after the course id (e.g. `dd103`, `serdes-lab`).
-2. Clone and bootstrap:
+1. On [uoftasic/course-template](https://github.com/uoftasic/course-template), click **Use this template** and create a repo named after the course id (for example `dd103` or `serdes-lab`).
+2. Clone it and fill in the course fields:
 
 ```bash
 python3 scripts/init-template.py \
@@ -30,7 +26,9 @@ python3 scripts/init-template.py \
 
 3. Enable **Settings → Pages → Deploy from a branch → `main` / `/docs`**.
 
-See [TEMPLATE.md](TEMPLATE.md) for the checklist. Org is always `uoftasic` — only course id / title / description are filled in.
+[TEMPLATE.md](TEMPLATE.md) has the checklist. The org is always `uoftasic`; only the course id, title and description are filled in.
+
+The sample pages already follow the course structure: a course path table on the home page, guide pages for reading, and lab writeups for doing. [AGENTS.md](AGENTS.md) explains it.
 
 ## Quick start
 
@@ -49,18 +47,19 @@ python3 scripts/hello.py
 python3 labs/lab-01/src/main.py
 ```
 
-Tool-heavy courses that need IIC-OSIC-TOOLS / SKY130 should document the team workbench setup in-course rather than bundling Docker in every repo.
+Courses that need IIC-OSIC-TOOLS or SKY130 run in the shared [workspace](https://github.com/uoftasic/workspace) that students set up in IC101. Document those setup steps in the course instead of bundling Docker in every repo.
 
 ## Layout
 
 | Path | On Pages? | Purpose |
 |------|-----------|---------|
-| `docs/` | **Yes** | Human-facing Docsify site |
-| `docs/labs/` | Yes | Lab *writeups* (procedure, theory) |
+| `docs/` | Yes | The Docsify site students read |
+| `docs/guide/` | Yes | Guide pages: reading only |
+| `docs/labs/` | Yes | Lab writeups: the steps students follow |
 | `labs/` | No | Runnable packages (HDL, Python, data, graders) |
-| `scripts/` | No | Team utilities / automation |
-| `notebooks/` | No | Exploratory / assignment notebooks |
-| `data/`, `figures/` | No | Shared datasets / source figures |
+| `scripts/` | No | Team utilities and automation |
+| `notebooks/` | No | Exploratory and assignment notebooks |
+| `data/`, `figures/` | No | Shared datasets and source figures |
 
 ## GitHub Pages
 
@@ -70,7 +69,7 @@ Tool-heavy courses that need IIC-OSIC-TOOLS / SKY130 should document the team wo
 | Branch | `main` |
 | Folder | `/docs` |
 
-No Actions deploy step is required for the baseline Docsify site.
+The Docsify site doesn't need an Actions deploy step.
 
 ## Contributing
 
@@ -78,4 +77,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-[MIT](LICENSE) — Copyright UofT ASIC Team / `uoftasic`
+[MIT](LICENSE). Copyright UofT ASIC Team / `uoftasic`.

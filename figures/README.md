@@ -1,5 +1,5 @@
 # Figures (source)
 
-Source figures (SVG, draw.io, schematics) for **{{COURSE_TITLE}}**.
+Source figures (SVG, draw.io, schematics) for {{COURSE_TITLE}}.
 
-Export small web-ready assets into `docs/assets/img/` when they appear on the Docsify site.
+When a figure appears on the Docsify site, export a small web-ready copy into `docs/assets/img/`.

@@ -1,6 +1,6 @@
 # Scripts
 
-Utilities for **{{COURSE_TITLE}}** under the UofT ASIC org (`uoftasic`).
+Utilities for {{COURSE_TITLE}} under the UofT ASIC org (`uoftasic`).
 
 ## Entry points
 
@@ -23,6 +23,6 @@ python3 scripts/init-template.py \
 
 ## Conventions
 
-- Prefer Python; HDL tooling belongs in `labs/` or the shared workbench.
-- No secrets in the repo; use `.env.example` if configuration is needed.
-- Document new scripts here when you add them.
+- Write scripts in Python where you can. HDL tooling belongs in `labs/` or the shared workbench.
+- Keep secrets out of the repo. If a script needs configuration, add a `.env.example`.
+- When you add a script, add it to the table above.
