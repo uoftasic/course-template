@@ -26,7 +26,7 @@ Keep each kind of file in the folder listed for it.
 | `notebooks/` | No | Exploratory or assignment notebooks |
 | `data/`, `figures/` | No | Shared datasets and source figures |
 
-The site is wired up by `docs/index.html`, `docs/_sidebar.md` and `docs/_navbar.md`. Write math as `$inline$` or `$$display$$`. The `{{COURSE_ID}}`, `{{COURSE_TITLE}}` and `{{DESCRIPTION}}` tokens in the sample pages are filled in by `scripts/init-template.py` (see `TEMPLATE.md`).
+The site is wired up by `docs/index.html`, `docs/_sidebar.md` and `docs/_navbar.md`. Write math as `$inline$` or `$$display$$`. The `{{...}}` tokens in the sample pages (course id, title and description) are filled in by `scripts/init-template.py`; see `TEMPLATE.md`.
 
 ## Course structure
 
