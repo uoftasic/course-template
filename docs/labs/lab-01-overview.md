@@ -1,54 +1,73 @@
-# Lab 01 overview
+# Lab 01
 
-Short writeup for the published docs site. Full runnable content: [`labs/lab-01/`](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs/lab-01).
+<!--
+  Template sample of a lab writeup. The writeup is the one place where
+  students do things. Keep this shape: two or three lines on what they'll
+  build or measure, before you start, time, numbered parts with numbered
+  steps (each part ends in a "you should see" check), then finishing. Put
+  each question at the step where it comes up.
+-->
 
-## Prerequisites
+You'll run a starter Python script and check what it prints. The script and the other files for this lab are in [`labs/lab-01/`](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs/lab-01) in the course repo.
 
-- Python 3.10+ on your machine
-- Clone of `uoftasic/{{COURSE_ID}}`
-- For EDA-heavy follow-ons: course workbench / IIC-OSIC-TOOLS (not required for this starter)
+## Before you start
 
-## Objectives
+- Read [Getting started](guide/getting-started.md).
+- You need Python 3.10 or newer and a clone of the course repo:
 
-- Confirm the UofT ASIC lab package layout
-- Run the starter under `labs/lab-01/src/`
-- Optionally capture baselines in `labs/lab-01/results/`
+  ```bash
+  git clone https://github.com/uoftasic/{{COURSE_ID}}.git
+  ```
 
-## Theory (stub)
+- This starter only needs Python. Labs that use the EDA tools (IIC-OSIC-TOOLS) run in the shared [workspace](https://github.com/uoftasic/workspace) you set up in [IC101](https://uoftasic.com/ic101/).
 
-Replace with course-specific notes. Example discrete convolution:
+Time: about _N_ minutes.
 
-$$
-y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\, h[n-k]
-$$
+## Part 1: Set up the lab package
 
-## Procedure
+1. From the root of your clone, go to the lab folder:
 
-1. Open the lab package:
+   ```bash
+   cd labs/lab-01
+   ```
+
+2. Install the lab's Python dependencies:
+
+   ```bash
+   python3 -m pip install -r requirements.txt
+   ```
+
+You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so nothing gets installed.
+
+If pip stops with `error: externally-managed-environment`, your system Python doesn't let pip install into it (the system Python on Ubuntu 24.04 does this). Make a virtual environment in the lab folder and run the install inside it:
 
 ```bash
-cd labs/lab-01
+python3 -m venv .venv      # on Ubuntu, install the python3-venv package first
+. .venv/bin/activate
+python3 -m pip install -r requirements.txt
 ```
 
-2. Install dependencies if needed:
+## Part 2: Run the starter
 
-```bash
-pip install -r requirements.txt
+1. Open `src/main.py`. Which function works out the number the script prints after `checksum=`?
+
+2. Run the script:
+
+   ```bash
+   python3 src/main.py
+   ```
+
+You should see:
+
+<!-- Template: replace this with your lab's own known-good output. -->
+
+```text
+lab-01 ready
+checksum=13
 ```
 
-3. Run the starter:
+## Finishing
 
-```bash
-python3 src/main.py
-```
+You're done when `python3 src/main.py` prints the two lines in Part 2. There is nothing to submit for this lab.
 
-4. Keep large GDS / waveform dumps out of `docs/` — use `results/` locally or Git LFS when sharing.
-
-## Expected results
-
-- Starter prints a greeting and a trivial checksum (replace with course goldens).
-
-## Links
-
-- [Lab package](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs/lab-01)
-- [Scripts](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/scripts)
+Outputs from a lab go in its `results/` folder (here `labs/lab-01/results/`), never in `docs/`.
