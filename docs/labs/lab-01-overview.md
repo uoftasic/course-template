@@ -13,7 +13,7 @@ You'll run a starter Python script and check what it prints. The script and the 
 ## Before you start
 
 - Read [Getting started](guide/getting-started.md).
-- You need Python 3.10 or newer and a clone of the course repo:
+- You need git, Python 3.10 or newer, and a clone of the course repo:
 
   ```bash
   git clone https://github.com/uoftasic/{{COURSE_ID}}.git
@@ -46,6 +46,8 @@ python3 -m venv .venv      # on Ubuntu, install the python3-venv package first
 . .venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
+
+If you open a new terminal before Part 2, run `. .venv/bin/activate` in it again.
 
 ## Part 2: Run the starter
 

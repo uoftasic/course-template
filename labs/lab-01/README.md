@@ -16,6 +16,8 @@ python3 -m pip install -r requirements.txt
 python3 src/main.py
 ```
 
+If pip stops with `error: externally-managed-environment`, Part 1 of the writeup shows how to use a virtual environment.
+
 ## Files
 
 | Path | What it is |
@@ -23,4 +25,4 @@ python3 src/main.py
 | `src/main.py` | Starter entry point; prints `lab-01 ready` and a checksum |
 | `data/` | Lab-local inputs (empty in the starter) |
 | `results/` | Optional baselines and your local outputs (empty in the starter) |
-| `requirements.txt` | Python dependencies (none yet) |
+| `requirements.txt` | Python dependencies (empty in the starter) |
