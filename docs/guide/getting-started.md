@@ -21,7 +21,7 @@ The files a lab runs (code, data, and any scripts that check your results) are i
 
 ## Lab structure
 
-Each lab is split into numbered parts with numbered steps, and each part ends with what you should see if it worked. In at least one part you make something yourself: you edit a file, write a test, or work out a number before a script or tool prints it.
+Each lab is split into numbered parts with numbered steps. Most parts open with the question they answer, and the steps work it out. Each part has a "You should see" check that tells you whether it worked. In at least one part you make something yourself: you edit a file, write a test, or work out a number before a script or tool prints it.
 
 Some steps ask you to write down what you expect before you run something. Write your prediction down first, so you have something to compare the result with.
 
@@ -29,7 +29,7 @@ When a step asks a question, its answer is in a collapsed block right under it. 
 
 A part marked "(optional)" comes after all the required parts. You can skip it: no later part needs it, and the lab's time estimate doesn't count it.
 
-Every lab ends with a Finishing section. It says how you know you're done, asks a few questions about your own results, and says what to submit, if anything. The last line of each lab points to the next row on the course path.
+Every lab ends with a Finishing section. It says how you know you're done, asks any questions you answer from your own work, and says what to submit, if anything. The last line of each lab points to the next row on the course path.
 
 ## Math and figures
 
