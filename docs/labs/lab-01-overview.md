@@ -97,7 +97,7 @@ What does the starter print, and where does its checksum come from?
 
 ## Part 3: Change the message
 
-Does a shorter message always give a smaller checksum?
+What happens to the checksum when the message gets shorter?
 
 1. In `src/main.py`, change the line `message = "lab-01 ready"` to:
 
@@ -133,7 +133,9 @@ Does a shorter message always give a smaller checksum?
 
 Can this checksum tell when two characters swap places? No later part needs this one.
 
-1. From `labs/lab-01`, run `checksum()` on your message with the `0` and `1` swapped. `PYTHONPATH=src` lets Python find `main.py` in `src/`. Before you run it, write down what you expect it to print.
+1. Your Part 3 message with the `0` and `1` swapped is `lab-10 done`. Before you run anything, write down what you expect its checksum to be.
+
+2. From `labs/lab-01`, run `checksum()` on the swapped message. `PYTHONPATH=src` lets Python find `main.py` in `src/`.
 
    ```bash
    PYTHONPATH=src python3 -c 'from main import checksum; print(checksum("lab-10 done"))'
@@ -141,7 +143,7 @@ Can this checksum tell when two characters swap places? No later part needs this
 
    You should see `899`, the same checksum as `lab-01 done` in Part 3.
 
-2. Why didn't the checksum change?
+3. Why didn't the checksum change?
 
    <details>
    <summary>Answer</summary>
