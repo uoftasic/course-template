@@ -30,20 +30,81 @@ The site is wired up by `docs/index.html`, `docs/_sidebar.md` and `docs/_navbar.
 
 ## Course structure
 
-Every course follows the same shape, so a student always knows whether they should be reading or doing, and what comes next.
+Every course follows the same shape, so a student always knows whether they should be reading or doing, and what comes next. The sample pages show it: `docs/README.md`, `docs/guide/getting-started.md` and `docs/labs/lab-01-overview.md`.
 
-- **Home page** (`docs/README.md`): who the course is for, prerequisites, total time, and a numbered course path table. Each row is either *Read* (one or more guide pages) or *Do* (one lab), with a time estimate. Read and Do rows alternate in the order a student should work. `docs/_sidebar.md` lists the same pages in the same order. The Previous and Next links at the bottom of each page (the docsify-pagination plugin in `docs/index.html`) follow the sidebar, so they walk the course path too.
-- **Guide pages** (`docs/guide/`): reading only. No commands the student has to run. If a page needs the student to run or build something, make it a numbered step in the matching lab writeup and leave a one-line pointer in the guide ("You'll measure this yourself in Lab 02, Part 3."). Pencil-and-paper questions can go in a short "Check yourself" block at the end of the page.
-- **Lab writeups** (`docs/labs/<lab-id>-overview.md`): the one place for doing. In this order:
-  1. What the student will build or measure, in two or three lines, and a link to `labs/<lab-id>/`.
-  2. Before you start: which guide pages to read first, and any setup.
-  3. A time estimate.
-  4. Numbered parts, each with numbered steps. Each part ends with a concrete "You should see …" check. Questions the student must answer go at the step where they come up.
-  5. Finishing: how the student knows they're done (for example, `make` prints PASS) and what to submit, if anything.
-- **Package READMEs** (`labs/<lab-id>/README.md`): short. A link to the writeup, how to run, a table of make targets if there is a Makefile, and the file list. Don't repeat the teaching from the writeup.
-- **Reference pages** (`docs/reference/`) and `solutions/` READMEs are lookup-shaped: tables and short entries.
+### Home page
 
-The sample pages show this shape: `docs/README.md`, `docs/guide/getting-started.md` and `docs/labs/lab-01-overview.md`.
+`docs/README.md` says who the course is for, the prerequisites and the total time, then has a numbered course path table. Every course uses the same table format:
+
+```
+| # | | What | Time |
+|---|---|---|---|
+| 1 | Read | [Page](guide/page.md) · [Page](guide/page.md) | 45 min |
+| 2 | Do | [Lab 01: Title](labs/lab-01-...-overview.md). One sentence on what you'll do. | 1.5 h |
+```
+
+- Each row is either Read (one or more guide pages) or Do (one lab), in plain text. Read and Do rows alternate in the order a student should work.
+- Every Do row ends with one sentence on what the student does in the lab.
+- The row times add up to the total time stated on the home page. Leave optional lab parts out of the row times.
+- Lab titles take the form "Lab 01: Title" in the table, in the lab page's `#` header and in the sidebar.
+
+`docs/_sidebar.md` lists the same pages in the same order. The Previous and Next links at the bottom of each page (the docsify-pagination plugin in `docs/index.html`) follow the sidebar, so they walk the course path too.
+
+### Guide pages
+
+`docs/guide/` is reading only. No commands the student has to run. If a page needs the student to run or build something, make it a numbered step in the matching lab writeup and leave a one-line pointer in the guide ("You'll measure this yourself in Lab 02, Part 3."). Pencil-and-paper questions can go in a short "Check yourself" block at the end of the page.
+
+### Lab writeups
+
+`docs/labs/<lab-id>-overview.md` is the one place for doing. In this order:
+
+1. What the student will build or measure, in two or three lines, and a link to `labs/<lab-id>/`.
+2. Before you start: which guide pages to read first, and any setup.
+3. A time estimate. Leave optional parts out of it, or give their time separately ("about 2 h, plus 20 min for the optional part").
+4. Numbered parts, each with numbered steps. Open each part with the one question it answers, and end it with a concrete "You should see …" check.
+5. Optional parts, if any, after all the required parts, with "(optional)" in the header. If a required part depends on an optional one, the optional part isn't optional: fix one or the other.
+6. Finishing, with these three things in this order:
+   1. You're done when: one checkable line tied to the student's own work, such as `make` printing PASS on the deck they edited. A PASS from the shipped package doesn't count, because it passes before the student has done anything.
+   2. Questions, if there are any. Ask only what the student can answer from their own work, and give each one a collapsed answer or a pointer to the step that answers it.
+   3. Submit: what to submit, or "Nothing to submit."
+7. Going further (optional), if you have extra reading or experiments that no part depends on.
+8. A last line, "Next on the [Course path](README.md#course-path): …", that names the next row.
+
+Inside the parts:
+
+- At least one required part has the student produce something: edit a deck or file, write a test, draw a cell, or work out a number and write it down before checking it. A lab where the student runs the shipped package and reads its output doesn't meet this.
+- Use prediction steps ("write down what you expect before you run it") wherever the student can reasonably predict the result.
+- Keep the observed numbers and outputs in "You should see". They're how the student knows they're on track. If the check would also explain why, ask the why as a question at that step and put the answer in a collapsed block directly under it:
+
+  ```html
+  <details>
+  <summary>Answer</summary>
+
+  The text of the answer, with Markdown and $math$ as usual. Leave the blank lines.
+
+  </details>
+  ```
+
+  Inside a numbered step, indent the block to line up with the step's text, as the sample lab does.
+- Copy every expected output from a real run, on the course image if the lab uses the EDA tools.
+- Put each question at the step where it comes up.
+- As a rough guide, split or trim a part with more than eight steps. Steps that don't help answer the part's question go in Going further.
+- Keep a writeup under about 2,500 words. Move lookup material (troubleshooting tables, warning catalogues, full tool output) to `docs/reference/` and link it from the step where it comes up. Don't cut teaching content, numbers, caveats or warnings to get there.
+
+For a course that runs on the workbench, Lab 01 Part 1 is "Load the course", in about 30 lines:
+
+- One line: if you haven't set up the workbench, do [IC101 Lab 03](https://uoftasic.com/ic101/#/labs/lab-03-launch-the-workbench-overview) first.
+- Start the desktop, load `.designinit`, and run `mod add <course-id>`.
+- Check the course-specific tool versions that the printed outputs depend on.
+- List only the troubleshooting rows specific to this course, and link IC101's [Troubleshooting](https://uoftasic.com/ic101/#/reference/troubleshooting) page for the rest. Keep fallback routes that work without `mod`.
+
+The sample lab needs only Python, so its Part 1 installs the Python requirements instead.
+
+### Package READMEs and reference pages
+
+`labs/<lab-id>/README.md` is short: a link to the writeup, how to run, a table of make targets if there is a Makefile, and the file list. Don't repeat the teaching from the writeup.
+
+Reference pages (`docs/reference/`) and `solutions/` READMEs are lookup-shaped: tables and short entries.
 
 ## Adding a lab
 
@@ -56,7 +117,7 @@ Labs are the main unit of coursework. Name them `lab-NN-short-name` (for example
    - `results/`: local outputs
    - `requirements.txt` or tool notes when needed
 2. Add `docs/labs/<lab-id>-overview.md` in the writeup shape above.
-3. Add a *Do* row to the course path table on the home page, and an entry in `docs/_sidebar.md` at the same position. Add it to `_navbar.md` only if it belongs in the top nav.
+3. Add a Do row to the course path table on the home page, in the format above, and an entry "Lab NN: Title" in `docs/_sidebar.md` at the same position. Update the row times and the total time so they still add up. Add the lab to `_navbar.md` only if it belongs in the top nav.
 4. Cross-link: the writeup links to `labs/<lab-id>/` on GitHub, and the package README links to `docs/labs/<lab-id>-overview.md`.
 
 Don't paste long HDL into Docsify pages. Link to the files under `labs/` instead.
@@ -64,7 +125,7 @@ Don't paste long HDL into Docsify pages. Link to the files under `labs/` instead
 ## Adding a guide page
 
 1. Add a kebab-case Markdown file under `docs/guide/` (for example `yosys-synth.md`).
-2. Add it to a *Read* row in the course path table, and to `docs/_sidebar.md` at the same position.
+2. Add it to a Read row in the course path table, and to `docs/_sidebar.md` at the same position.
 3. Put images in `docs/assets/img/`.
 4. Link to `labs/` and `scripts/` with GitHub URLs (`https://github.com/uoftasic/<course-id>/tree/main/labs/...`).
 

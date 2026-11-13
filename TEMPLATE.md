@@ -33,12 +33,12 @@ Add `--dry-run` to see what it would change without writing anything.
 - [ ] Pushed to `main`
 - [ ] Pages: **Settings → Pages → `main` / `/docs`**
 - [ ] Live at `https://uoftasic.com/<course-id>/` (org Pages; the hub is https://edu.uoftasic.com/)
-- [ ] Sidebar goes Home → Getting started → Lab 01
+- [ ] Sidebar goes Home → Getting started → Lab 01: Starter script
 - [ ] Math and the sample figure render on the Getting started page
-- [ ] Home page filled in: who the course is for, prerequisites, total time, and the course path rows with time estimates
+- [ ] Home page filled in: who the course is for, prerequisites, total time, and the course path rows, with times that add up to the total
 - [ ] (Maintainers of this template only) **Settings → Template repository** enabled
 
-The sample pages follow the course structure in [AGENTS.md](AGENTS.md). The home page has the course path, guide pages are for reading only, and lab writeups are the one place where students run things.
+The sample pages follow the course structure in [AGENTS.md](AGENTS.md). The home page has the course path, guide pages are for reading only, and lab writeups are the one place where students run things. The sample lab shows the parts of a lab: a required part where the student edits the script and predicts the result, an optional part at the end, and the Finishing section.
 
 ## Naming
 
