@@ -99,10 +99,10 @@ What does the starter print, and where does its checksum come from?
 
 What happens to the checksum when the message gets shorter?
 
-1. In `src/main.py`, change the line `message = "lab-01 ready"` to:
+1. In `src/main.py`, change `ready` to `done` in the line `message = "lab-01 ready"`. Keep the four spaces at the start of the line, or Python stops with an `IndentationError`. The line should now read:
 
    ```python
-   message = "lab-01 done"
+       message = "lab-01 done"
    ```
 
 2. `done` is one character shorter than `ready`. Before you run the script, write down whether you expect the new checksum to be bigger or smaller than 13.
