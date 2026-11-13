@@ -1,7 +1,7 @@
 - [Home](README.md)
 - **Course path**
   - [1. Getting started](guide/getting-started.md)
-  - [2. Lab 01](labs/lab-01-overview.md)
+  - [2. Lab 01: Starter script](labs/lab-01-overview.md)
 - **Repo**
   - [Lab packages](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs)
   - [Scripts](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/scripts)

@@ -17,14 +17,21 @@ This site has the reading and the lab writeups. The code each lab runs is in the
 
 ## Course path
 
-Work down the table in order. A *Read* row is one or more guide pages: you only read, and there is nothing to run. A *Do* row is a lab, where you run things and check the results.
+Work down the table in order. A Read row is one or more guide pages: you only read, and there is nothing to run. A Do row is a lab, where you run things, make something of your own and check your results.
 
 <!--
-  Template: Read and Do rows alternate, in the order a student should work.
-  Give every row a time estimate. Keep docs/_sidebar.md in the same order.
+  Template: keep this table format in every course.
+  - Read and Do are plain text, and Read and Do rows alternate in the order
+    a student should work.
+  - A Do row names the lab as "Lab NN: Title", the same as the lab page's
+    header and the sidebar, and ends with one sentence on what you'll do.
+  - Separate several guide pages in one Read row with " · ".
+  - Give every row a time estimate. The row times add up to the total time
+    above. Leave optional lab parts out of them.
+  - Keep docs/_sidebar.md in the same order.
 -->
 
-| # | Type | Page | Time |
-|---|------|------|------|
+| # | | What | Time |
+|---|---|---|---|
 | 1 | Read | [Getting started](guide/getting-started.md) | _N_ min |
-| 2 | Do | [Lab 01](labs/lab-01-overview.md) | _N_ min |
+| 2 | Do | [Lab 01: Starter script](labs/lab-01-overview.md). Run the starter Python script, then change its message and predict the new checksum. | _N_ min |
