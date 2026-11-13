@@ -61,7 +61,7 @@ Every course follows the same shape, so a student always knows whether they shou
 1. What the student will build or measure, in two or three lines, and a link to `labs/<lab-id>/`.
 2. Before you start: which guide pages to read first, and any setup.
 3. A time estimate. Leave optional parts out of it, or give their time separately ("about 2 h, plus 20 min for the optional part").
-4. Numbered parts, each with numbered steps. Open each part with the one question it answers, and end it with a concrete "You should see …" check.
+4. Numbered parts, each with numbered steps. Open each part with the one question it answers, and end it with a concrete "You should see …" check. A setup part, such as the sample lab's Part 1, can skip the question.
 5. Optional parts, if any, after all the required parts, with "(optional)" in the header. If a required part depends on an optional one, the optional part isn't optional: fix one or the other.
 6. Finishing, with these three things in this order:
    1. You're done when: one checkable line tied to the student's own work, such as `make` printing PASS on the deck they edited. A PASS from the shipped package doesn't count, because it passes before the student has done anything.

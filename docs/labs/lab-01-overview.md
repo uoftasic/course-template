@@ -65,7 +65,7 @@ Time: about _N_ minutes, plus _N_ minutes for the optional Part 4.
 
    If you open a new terminal later in the lab, run `. .venv/bin/activate` in it again.
 
-You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so pip doesn't install anything.
+   You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so pip doesn't install anything.
 
 ## Part 2: Run the starter
 
@@ -86,20 +86,20 @@ What does the starter print, and where does its checksum come from?
    python3 src/main.py
    ```
 
-You should see:
+   You should see:
 
-<!-- Template: replace this with your lab's own known-good output. -->
+   <!-- Template: replace this with your lab's own known-good output. -->
 
-```text
-lab-01 ready
-checksum=13
-```
+   ```text
+   lab-01 ready
+   checksum=13
+   ```
 
 ## Part 3: Change the message
 
 Does a shorter message always give a smaller checksum?
 
-1. In `src/main.py`, change the message line to:
+1. In `src/main.py`, change the line `message = "lab-01 ready"` to:
 
    ```python
    message = "lab-01 done"
@@ -125,7 +125,7 @@ Does a shorter message always give a smaller checksum?
    <details>
    <summary>Answer</summary>
 
-   The character codes of `lab-01 ready` add up to 1010, and those of `lab-01 done` add up to 899. 1010 is more than 997, so the old checksum was the remainder, $1010 - 997 = 13$. 899 is less than 997, so the new checksum is 899 itself. The total went down, but the remainder went up.
+   The character codes of `lab-01 ready` add up to 1010, and those of `lab-01 done` add up to 899. 1010 is more than 997, so the old checksum was the remainder, $1010 - 997 = 13$. 899 is less than 997, so the new checksum is 899 itself.
 
    </details>
 

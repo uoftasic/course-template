@@ -12,7 +12,7 @@ This page explains how the course is laid out and how its pages show math and fi
 
 ## Course layout
 
-The [course path](README.md) on the home page lists every page in the order you should work through them. Each row is one of two kinds:
+The [course path](README.md#course-path) on the home page lists every page in the order you should work through them. Each row is one of two kinds:
 
 - A Read row points to guide pages like this one. They explain the ideas with figures and worked examples. You don't need a terminal open to read them.
 - A Do row points to a lab writeup. Labs are where you run things.
@@ -21,13 +21,13 @@ The files a lab runs (code, data, and any scripts that check your results) are i
 
 ## Lab structure
 
-Each lab is split into numbered parts with numbered steps, and each part ends with what you should see if it worked. In at least one part you make something yourself: you edit a file, write a test, or work out a number before the tool prints it.
+Each lab is split into numbered parts with numbered steps, and each part ends with what you should see if it worked. In at least one part you make something yourself: you edit a file, write a test, or work out a number before a script or tool prints it.
 
 Some steps ask you to write down what you expect before you run something. Write your prediction down first, so you have something to compare the result with.
 
 When a step asks a question, its answer is in a collapsed block right under it. Try the question yourself, then click "Answer" to open it. The questions in Check yourself at the end of this page work the same way.
 
-A part marked "(optional)" comes after all the required parts. You can skip it: no later part needs it, and the lab's time estimate either leaves it out or gives its time separately.
+A part marked "(optional)" comes after all the required parts. You can skip it: no later part needs it, and the lab's time estimate doesn't count it.
 
 Every lab ends with a Finishing section. It says how you know you're done, asks a few questions about your own results, and says what to submit, if anything. The last line of each lab points to the next row on the course path.
 
