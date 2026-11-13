@@ -1,14 +1,26 @@
-# Lab 01
+# Lab 01: Starter script
 
 <!--
-  Template sample of a lab writeup. The writeup is the one place where
-  students do things. Keep this shape: two or three lines on what they'll
-  build or measure, before you start, time, numbered parts with numbered
-  steps (each part ends in a "you should see" check), then finishing. Put
-  each question at the step where it comes up.
+  Template sample of a lab writeup, the one place where students do things.
+  Keep this shape (AGENTS.md has the details):
+  - Two or three lines on what they'll build or measure, then Before you
+    start, then the time.
+  - Numbered parts with numbered steps. Open each part with the question it
+    answers and end it with a "You should see" check.
+  - At least one required part where the student makes something: edits a
+    file, writes a test, draws a cell, or works out a number before the tool
+    prints it (Part 3 here).
+  - Prediction steps where the student can reasonably predict. When a check
+    would also explain why, ask it as a question and put the answer in a
+    collapsed <details> block under it.
+  - Optional parts after the required ones, marked "(optional)", with their
+    time given separately.
+  - Finishing: You're done when, Questions, Submit. Then Going further
+    (optional), if any, and the "Next on the Course path" line.
+  Copy every expected output from a real run.
 -->
 
-You'll run a starter Python script and check what it prints. The script and the other files for this lab are in [`labs/lab-01/`](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs/lab-01) in the course repo.
+You'll run a starter Python script, then change the message it prints and predict what happens to its checksum. The script and the other files for this lab are in [`labs/lab-01/`](https://github.com/uoftasic/{{COURSE_ID}}/tree/main/labs/lab-01) in the course repo.
 
 ## Before you start
 
@@ -21,9 +33,14 @@ You'll run a starter Python script and check what it prints. The script and the 
 
 - This starter only needs Python. Labs that use the EDA tools (IIC-OSIC-TOOLS) run in the shared [workspace](https://github.com/uoftasic/workspace) you set up in [IC101](https://uoftasic.com/ic101/).
 
-Time: about _N_ minutes.
+Time: about _N_ minutes, plus _N_ minutes for the optional Part 4.
 
 ## Part 1: Set up the lab package
+
+<!--
+  Template: if your course runs on the workbench, Lab 01 Part 1 is
+  "Load the course" instead. AGENTS.md says what goes in it.
+-->
 
 1. From the root of your clone, go to the lab folder:
 
@@ -46,13 +63,22 @@ Time: about _N_ minutes.
    python3 -m pip install -r requirements.txt
    ```
 
-   If you open a new terminal before Part 2, run `. .venv/bin/activate` in it again.
+   If you open a new terminal later in the lab, run `. .venv/bin/activate` in it again.
 
-You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so nothing gets installed.
+You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so pip doesn't install anything.
 
 ## Part 2: Run the starter
 
-1. Open `src/main.py`. Which function works out the number the script prints after `checksum=`?
+What does the starter print, and where does its checksum come from?
+
+1. Open `src/main.py`. Which function works out the number the script prints after `checksum=`, and how?
+
+   <details>
+   <summary>Answer</summary>
+
+   `checksum()`. It adds up the character code of each character in the message (`ord(c)`) and keeps the remainder after dividing the total by 997 (`% 997`).
+
+   </details>
 
 2. Run the script:
 
@@ -69,8 +95,87 @@ lab-01 ready
 checksum=13
 ```
 
+## Part 3: Change the message
+
+Does a shorter message always give a smaller checksum?
+
+1. In `src/main.py`, change the message line to:
+
+   ```python
+   message = "lab-01 done"
+   ```
+
+2. `done` is one character shorter than `ready`. Before you run the script, write down whether you expect the new checksum to be bigger or smaller than 13.
+
+3. Run the script again:
+
+   ```bash
+   python3 src/main.py
+   ```
+
+   You should see:
+
+   ```text
+   lab-01 done
+   checksum=899
+   ```
+
+4. Compare the result with your prediction. The message got shorter, so why did the checksum go up?
+
+   <details>
+   <summary>Answer</summary>
+
+   The character codes of `lab-01 ready` add up to 1010, and those of `lab-01 done` add up to 899. 1010 is more than 997, so the old checksum was the remainder, $1010 - 997 = 13$. 899 is less than 997, so the new checksum is 899 itself. The total went down, but the remainder went up.
+
+   </details>
+
+## Part 4 (optional): Swap two characters
+
+Can this checksum tell when two characters swap places? No later part needs this one.
+
+1. From `labs/lab-01`, run `checksum()` on your message with the `0` and `1` swapped. `PYTHONPATH=src` lets Python find `main.py` in `src/`. Before you run it, write down what you expect it to print.
+
+   ```bash
+   PYTHONPATH=src python3 -c 'from main import checksum; print(checksum("lab-10 done"))'
+   ```
+
+   You should see `899`, the same checksum as `lab-01 done` in Part 3.
+
+2. Why didn't the checksum change?
+
+   <details>
+   <summary>Answer</summary>
+
+   Addition doesn't depend on order, so the same characters in any order add up to the same total and give the same checksum. A checksum that only adds character codes can't catch two characters swapping places.
+
+   </details>
+
 ## Finishing
 
-You're done when `python3 src/main.py` prints the two lines in Part 2. There is nothing to submit for this lab.
+You're done when `python3 src/main.py` prints `lab-01 done` and `checksum=899`, from your edit in Part 3.
+
+### Questions
+
+1. What values can `checksum()` return?
+
+   <details>
+   <summary>Answer</summary>
+
+   0 to 996. `% 997` keeps the remainder after dividing by 997, and the remainder is always smaller than the number you divide by.
+
+   </details>
+
+2. Why can a shorter message have a bigger checksum? (Answered in Part 3, step 4.)
+
+### Submit
+
+Nothing to submit.
 
 This starter doesn't write any files. When a lab does write large outputs, such as GDS files or waveform dumps, keep them in its `results/` folder (here `labs/lab-01/results/`) and out of `docs/`. Use Git LFS if you need to share them.
+
+<!--
+  Template: extra reading or experiments that no part depends on go under
+  "## Going further (optional)" here, before the Next line.
+-->
+
+Next on the [Course path](README.md#course-path): _the next row, with links to its guide pages or lab._
