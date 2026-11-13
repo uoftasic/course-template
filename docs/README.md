@@ -34,4 +34,4 @@ Work down the table in order. A Read row is one or more guide pages: you only re
 | # | | What | Time |
 |---|---|---|---|
 | 1 | Read | [Getting started](guide/getting-started.md) | _N_ min |
-| 2 | Do | [Lab 01: Starter script](labs/lab-01-overview.md). Run the starter Python script, then change its message and predict the new checksum. | _N_ min |
+| 2 | Do | [Lab 01: Starter script](labs/lab-01-overview.md). Run the starter Python script, then change its message and predict whether the checksum goes up or down. | _N_ min |
