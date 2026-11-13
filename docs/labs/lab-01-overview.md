@@ -156,16 +156,14 @@ You're done when `python3 src/main.py` prints `lab-01 done` and `checksum=899`, 
 
 ### Questions
 
-1. What values can `checksum()` return?
+1. Your Part 3 message gives `checksum=899`. What character code would one more character at the end of the message need, to make the checksum 0?
 
    <details>
    <summary>Answer</summary>
 
-   0 to 996. `% 997` keeps the remainder after dividing by 997, and the remainder is always smaller than the number you divide by.
+   A character with code 98. The total becomes $899 + 98 = 997$, and the remainder after dividing 997 by 997 is 0. Code 98 is `b`, so `message = "lab-01 doneb"` prints `checksum=0`.
 
    </details>
-
-2. Why can a shorter message have a bigger checksum? (Answered in Part 3, step 4.)
 
 ### Submit
 
