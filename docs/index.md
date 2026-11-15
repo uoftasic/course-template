@@ -13,11 +13,11 @@
 - Prerequisites: _earlier courses or background, with links._
 - Total time: _about N hours, the sum of the times in the course path._
 
-This site has the reading and the lab writeups. The code each lab runs is in the [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) under `labs/`. Other UofT ASIC courses are listed at [edu.uoftasic.com](https://edu.uoftasic.com/).
+This site holds the reading and the lab writeups, and the code that each lab runs is in the course's [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}), under `labs/`. You'll find the other UofT ASIC courses listed at [edu.uoftasic.com](https://edu.uoftasic.com/).
 
 ## Course path
 
-Work down the table in order. A Read row is one or more guide pages: you only read, and there is nothing to run. A Do row is a lab, where you run things, make something of your own and check your results.
+Work down the table in order. A Read row points you to one or more guide pages, which are for reading only, so there's nothing to run. A Do row is a lab, where you run things, make something of your own and check your results.
 
 <!--
   Template: keep this table format in every course.
@@ -34,4 +34,4 @@ Work down the table in order. A Read row is one or more guide pages: you only re
 | # | | What | Time |
 |---|---|---|---|
 | 1 | Read | [Getting started](guide/getting-started.md) | _N_ min |
-| 2 | Do | [Lab 01: Starter script](labs/lab-01-overview.md). Run the starter Python script, then change its message and predict whether the checksum goes up or down. | _N_ min |
+| 2 | Do | [Lab 01: Starter script](labs/lab-01-overview.md). Run the starter Python script, then change the message it prints and predict whether its checksum goes up or down. | _N_ min |
