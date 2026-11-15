@@ -1,0 +1,24 @@
+# The whole course as one PDF:
+#   quarto render docs --profile pdf --to typst      # writes docs/_book/*.pdf
+# Chapter order follows the sidebar in _quarto.yml.
+
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "{{COURSE_TITLE}}"
+  subtitle: "{{DESCRIPTION}}"
+  author: "UofT ASIC Team"
+  output-file: course-template-course
+  chapters:
+    - index.md
+    - part: "Course path"
+      chapters:
+        - guide/getting-started.md
+        - labs/lab-01-overview.md
+
+format:
+  typst:
+    toc: true
+    toc-depth: 1
