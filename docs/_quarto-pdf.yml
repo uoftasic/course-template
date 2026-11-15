@@ -10,7 +10,7 @@ book:
   title: "{{COURSE_TITLE}}"
   subtitle: "{{DESCRIPTION}}"
   author: "UofT ASIC Team"
-  output-file: course-template-course
+  output-file: "{{COURSE_ID}}-course"
   chapters:
     - index.md
     - part: "Course path"

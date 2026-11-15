@@ -28,7 +28,8 @@ Work down the table in order. A Read row points you to one or more guide pages, 
   - Separate several guide pages in one Read row with " · ".
   - Give every row a time estimate. The row times add up to the total time
     above. Leave optional lab parts out of them.
-  - Keep docs/_sidebar.md in the same order.
+  - Keep the sidebar in docs/_quarto.yml and the chapters in
+    docs/_quarto-pdf.yml in the same order.
 -->
 
 | # | | What | Time |

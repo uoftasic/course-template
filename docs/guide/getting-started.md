@@ -12,7 +12,7 @@ This page explains how the course is laid out and how its pages show math and fi
 
 ## Course layout
 
-The [course path](../index.md#course-path) on the home page lists every page in the order you should work through them. Each row is one of two kinds:
+The [course path](../index.md#course-path) on the home page lists all the pages in the order you should work through them. Each row is one of two kinds:
 
 - A Read row points to guide pages like this one, which explain the ideas with figures and worked examples. You don't need a terminal open to read them.
 - A Do row points to a lab writeup, and the labs are where you run things.
@@ -23,13 +23,13 @@ The files a lab runs (code, data, and any scripts that check your results) are i
 
 Each lab is split into numbered parts with numbered steps. Most parts open with the question they answer, and the steps then work out the answer. Each part has a "You should see" check, which tells you whether what you did worked. In at least one part you make something yourself, such as editing a file, writing a test, or working out a number before a script or tool prints it.
 
-Some steps ask you to write down what you expect before you run something. Write your prediction down first, so that you have something to compare the result with.
+Some steps ask you to write down what you expect before you run something, so that you have a prediction of your own to compare the result with.
 
 When a step asks a question, its answer is in a collapsed block right under it. Try to answer the question yourself first, and then click "Answer" to open the block. The questions in Check yourself at the end of this page work the same way.
 
-A part marked "(optional)" comes after all the required parts. You can skip it, because no later part needs it and the lab's time estimate doesn't include it.
+A part marked "(optional)" comes after all the required parts. No later part needs it, so you can skip it, and the lab's time estimate doesn't include it.
 
-Every lab ends with a Finishing section. It tells you how to know you're done, asks any questions that you can answer from your own work, and says what to submit, if anything. The last line of each lab points to the next row on the course path.
+Every lab ends with a Finishing section. It tells you how you'll know you're done, asks any questions that you can answer from your own work, and says what to submit, if anything. The last line of each lab points to the next row on the course path.
 
 ## Math and figures
 

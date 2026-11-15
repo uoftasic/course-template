@@ -15,7 +15,7 @@ project:
 website:
   title: "{{COURSE_TITLE}}"
   description: "{{DESCRIPTION}}"
-  site-url: https://uoftasic.com/course-template/
+  site-url: https://uoftasic.com/{{COURSE_ID}}/
   repo-url: https://github.com/uoftasic/{{COURSE_ID}}
   repo-subdir: docs
   repo-actions: [issue]
@@ -30,7 +30,7 @@ website:
     right:
       - text: Course PDF
         icon: file-pdf
-        href: course-template-course.pdf
+        href: "{{COURSE_ID}}-course.pdf"
       - icon: github
         href: https://github.com/uoftasic/{{COURSE_ID}}
         aria-label: GitHub
@@ -65,7 +65,7 @@ format:
       light: [cosmo, _light.scss]
       dark: [darkly, _dark.scss]
     css: _styles.css
-    # Keeps old Docsify links (.../course-template/#/labs/...) working.
+    # Keeps old Docsify links (.../{{COURSE_ID}}/#/labs/...) working.
     include-in-header: _docsify-redirect.html
     toc: true
     toc-depth: 3

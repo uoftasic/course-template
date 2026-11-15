@@ -39,11 +39,11 @@ jobs:
       - name: Render the site
         run: quarto render docs
 
-      # The whole course as one PDF, linked from the navbar as course-template-course.pdf.
+      # The whole course as one PDF, linked from the navbar as {{COURSE_ID}}-course.pdf.
       - name: Render the course PDF
         run: |
           quarto render docs --profile pdf --to typst
-          cp docs/_book/course-template-course.pdf docs/_site/
+          cp docs/_book/{{COURSE_ID}}-course.pdf docs/_site/
 
       - name: Check links and anchors in the rendered site
         run: python3 scripts/check_site.py docs/_site
