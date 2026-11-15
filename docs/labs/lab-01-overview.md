@@ -31,7 +31,7 @@ You'll run a starter Python script, then change the message it prints and predic
   git clone https://github.com/uoftasic/{{COURSE_ID}}.git
   ```
 
-- This starter only needs Python. Labs that use the EDA tools (IIC-OSIC-TOOLS) run in the shared [workspace](https://github.com/uoftasic/workspace) you set up in [IC101](https://uoftasic.com/ic101/).
+- This starter needs only Python. Labs that use the EDA tools (IIC-OSIC-TOOLS) run in the shared [workspace](https://github.com/uoftasic/workspace) that you set up in [IC101](https://uoftasic.com/ic101/).
 
 Time: about _N_ minutes, plus _N_ minutes for the optional Part 4.
 
@@ -63,9 +63,9 @@ Time: about _N_ minutes, plus _N_ minutes for the optional Part 4.
    python3 -m pip install -r requirements.txt
    ```
 
-   If you open a new terminal later in the lab, run `. .venv/bin/activate` in it again.
+   Activating the virtual environment changes only the terminal you ran it in, so if you open a new terminal later in the lab, run `. .venv/bin/activate` in that one too.
 
-   You should see pip finish without an error. The starter's `requirements.txt` has no packages in it, so pip doesn't install anything.
+   You should see pip finish without an error. It won't install anything, because the starter's `requirements.txt` has no packages in it.
 
 ## Part 2: Run the starter
 
@@ -76,7 +76,7 @@ What does the starter print, and where does its checksum come from?
    <details>
    <summary>Answer</summary>
 
-   `checksum()`. It adds up the character code of each character in the message (`ord(c)`) and keeps the remainder after dividing the total by 997 (`% 997`).
+   The `checksum()` function does. It adds up the character code of each character in the message (`ord(c)`), then divides the total by 997 and keeps the remainder (`% 997`).
 
    </details>
 
@@ -125,17 +125,17 @@ What happens to the checksum when the message gets shorter?
    <details>
    <summary>Answer</summary>
 
-   The character codes of `lab-01 ready` add up to 1010, and those of `lab-01 done` add up to 899. 1010 is more than 997, so the old checksum was the remainder, $1010 - 997 = 13$. 899 is less than 997, so the new checksum is 899 itself.
+   The character codes of `lab-01 ready` add up to 1010, and those of `lab-01 done` add up to 899. Because 1010 is more than 997, the old checksum was what was left over after dividing by 997, which is $1010 - 997 = 13$. The new total of 899 is less than 997, so dividing leaves all of it as the remainder, and the checksum is 899 itself.
 
    </details>
 
 ## Part 4 (optional): Swap two characters
 
-Can this checksum tell when two characters swap places? No later part needs this one.
+Can this checksum tell when two characters swap places? No later part depends on this one, so you can skip it.
 
 1. Your Part 3 message with the `0` and `1` swapped is `lab-10 done`. Before you run anything, write down what you expect its checksum to be.
 
-2. From `labs/lab-01`, run `checksum()` on the swapped message. `PYTHONPATH=src` lets Python find `main.py` in `src/`.
+2. From `labs/lab-01`, run `checksum()` on the swapped message. The `PYTHONPATH=src` at the start of the command tells Python to look in `src/` for modules, which is how it finds `main.py`.
 
    ```bash
    PYTHONPATH=src python3 -c 'from main import checksum; print(checksum("lab-10 done"))'
@@ -158,12 +158,12 @@ You're done when `python3 src/main.py` prints `lab-01 done` and `checksum=899`, 
 
 ### Questions
 
-1. Your Part 3 message gives `checksum=899`. What character code would one more character at the end of the message need, to make the checksum 0?
+1. Your Part 3 message gives `checksum=899`. If you added one more character to the end of the message, what character code would it need for the checksum to come out as 0?
 
    <details>
    <summary>Answer</summary>
 
-   A character with code 98. The total becomes $899 + 98 = 997$, and the remainder after dividing 997 by 997 is 0. Code 98 is `b`, so `message = "lab-01 doneb"` prints `checksum=0`.
+   It would need code 98. The total then becomes $899 + 98 = 997$, and 997 divided by 997 leaves a remainder of 0. Code 98 is `b`, so `message = "lab-01 doneb"` prints `checksum=0`.
 
    </details>
 
