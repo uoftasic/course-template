@@ -1,6 +1,6 @@
 # Lab 01: Starter script
 
-Starter lab package for {{COURSE_TITLE}}. It needs Python 3.10 or newer. The steps are in the writeup: [`docs/labs/lab-01-overview.md`](../../docs/labs/lab-01-overview.md), published at `https://uoftasic.com/{{COURSE_ID}}/#/labs/lab-01-overview`.
+This is the starter lab package for {{COURSE_TITLE}}, and it needs Python 3.10 or newer. The steps are in the writeup, [`docs/labs/lab-01-overview.md`](../../docs/labs/lab-01-overview.md), which is published at `https://uoftasic.com/{{COURSE_ID}}/labs/lab-01-overview.html`.
 
 <!--
   Template: keep package READMEs short. Link to the writeup, show how to run
