@@ -93,10 +93,10 @@ Inside the parts:
 
 For a course that runs on the workbench, Lab 01 Part 1 is "Load the course", in about 30 lines:
 
-- One line: if you haven't set up the workbench, do [IC101 Lab 03](https://uoftasic.com/ic101/#/labs/lab-03-launch-the-workbench-overview) first.
+- One line: if you haven't set up the workbench, do [IC101 Lab 03](https://uoftasic.com/ic101/labs/lab-03-launch-the-workbench-overview.html) first.
 - Start the desktop, load `.designinit`, and run `mod add <course-id>`.
 - Check the course-specific tool versions that the printed outputs depend on.
-- List only the troubleshooting rows specific to this course, and link IC101's [Troubleshooting](https://uoftasic.com/ic101/#/reference/troubleshooting) page for the rest. Keep fallback routes that work without `mod`.
+- List only the troubleshooting rows specific to this course, and link IC101's [Troubleshooting](https://uoftasic.com/ic101/reference/troubleshooting.html) page for the rest. Keep fallback routes that work without `mod`.
 
 The sample lab needs only Python, so its Part 1 installs the Python requirements instead.
 
