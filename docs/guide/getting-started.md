@@ -25,7 +25,7 @@ Each lab is split into numbered parts with numbered steps. Most parts open with 
 
 Some steps ask you to write down what you expect before you run something, so that you have a prediction of your own to compare the result with.
 
-When a step asks a question, its answer is in a collapsed block right under it. Try to answer the question yourself first, and then click "Answer" to open the block. The questions in Check yourself at the end of this page work the same way.
+When a step asks a question, its answer is in a collapsed block right under it. Try to answer the question yourself first, and then click "Answer" to open the block. (In the PDF version of a page, the answers are collected at the end of the page instead, and a short note marks where each one was.) The questions in Check yourself at the end of this page work the same way.
 
 A part marked "(optional)" comes after all the required parts. No later part needs it, so you can skip it, and the lab's time estimate doesn't include it.
 
@@ -38,7 +38,7 @@ Every lab ends with a Finishing section. It tells you how you'll know you're don
   docs/assets/img/. Replace this section with your own content.
 -->
 
-Math on these pages is typeset with MathJax. Inline math sits inside the sentence, like $y[n] = x[n] * h[n]$ for discrete convolution, and display math gets a line of its own:
+Math on these pages is typeset with MathJax on the website and by Typst in the PDFs. Inline math sits inside the sentence, like $y[n] = x[n] * h[n]$ for discrete convolution, and display math gets a line of its own:
 
 $$
 y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\, h[n-k]
