@@ -6,6 +6,7 @@ Utilities for {{COURSE_TITLE}} under the UofT ASIC org (`uoftasic`).
 
 | Script | Purpose |
 |--------|---------|
+| `check_site.py` | Check that every local link and `#anchor` in the rendered site resolves; `.github/workflows/site.yml` runs it on `docs/_site` |
 | `hello.py` | Smoke-check that Python runs in this clone |
 | `init-template.py` | Fill `{{COURSE_ID}}` / title / description after using the template |
 

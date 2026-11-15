@@ -2,7 +2,7 @@
 
 {{DESCRIPTION}}
 
-This is the Docsify course and lab template for the UofT ASIC Team (`uoftasic`). The published site lives under `./docs`. Runnable labs, scripts, notebooks and data stay outside it, in the repo root. GitHub Pages serves the site with no build step, and Markdown, MathJax and images work as they are.
+This is the course and lab template for the UofT ASIC Team (`uoftasic`). The published site lives under `./docs`, and runnable labs, scripts, notebooks and data stay outside it, in the repo root. Quarto builds the site from the Markdown in `docs/` (configured in `docs/_quarto.yml`), with MathJax for the math and a PDF of every page, and `.github/workflows/site.yml` deploys it to GitHub Pages.
 
 Org: [github.com/uoftasic](https://github.com/uoftasic)
 
@@ -24,7 +24,7 @@ python3 scripts/init-template.py \
   --description "{{DESCRIPTION}}"
 ```
 
-3. Enable **Settings → Pages → Deploy from a branch → `main` / `/docs`**.
+3. Set **Settings → Pages → Source** to **GitHub Actions**.
 
 [TEMPLATE.md](TEMPLATE.md) has the checklist. The org is always `uoftasic`; only the course id, title and description are filled in.
 
@@ -36,9 +36,11 @@ The sample pages already follow the course structure: a course path table on the
 git clone https://github.com/uoftasic/{{COURSE_ID}}.git
 cd {{COURSE_ID}}
 
-# Docs (requires Node.js)
-npx docsify-cli serve docs
-# → http://localhost:3000
+# Docs (requires Quarto 1.11)
+quarto preview docs
+# → http://localhost:4200
+quarto render docs --profile pdf --to typst
+# → the whole course as one PDF in docs/_book/
 
 # Sample script
 python3 scripts/hello.py
@@ -53,7 +55,7 @@ Courses that need IIC-OSIC-TOOLS or SKY130 run in the shared [workspace](https:/
 
 | Path | On Pages? | Purpose |
 |------|-----------|---------|
-| `docs/` | Yes | The Docsify site students read |
+| `docs/` | Yes | The Quarto site students read (`docs/_quarto.yml`) |
 | `docs/guide/` | Yes | Guide pages: reading only |
 | `docs/labs/` | Yes | Lab writeups: the steps students follow |
 | `labs/` | No | Runnable packages (HDL, Python, data, graders) |
@@ -65,11 +67,9 @@ Courses that need IIC-OSIC-TOOLS or SKY130 run in the shared [workspace](https:/
 
 | Setting | Value |
 |---------|--------|
-| Source | Deploy from a branch |
-| Branch | `main` |
-| Folder | `/docs` |
+| Source | GitHub Actions |
 
-The Docsify site doesn't need an Actions deploy step.
+`.github/workflows/site.yml` renders `docs/` with Quarto whenever a push to `main` changes `docs/`, `scripts/check_site.py` or the workflow itself, and deploys `docs/_site`, which includes a PDF of every page and the whole-course PDF.
 
 ## Contributing
 

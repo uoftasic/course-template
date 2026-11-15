@@ -1,6 +1,6 @@
 # Agent guide: UofT ASIC course repos
 
-This is a course repository for the UofT ASIC Team (`uoftasic`). It holds teaching material for IC, RTL, FPGA and open-source ASIC flows. The site under `docs/` is published on GitHub Pages with Docsify, with no build step. Everything students run lives outside `docs/`.
+This is a course repository for the UofT ASIC Team (`uoftasic`). It holds teaching material for IC, RTL, FPGA and open-source ASIC flows. The site under `docs/` is built with Quarto and published on GitHub Pages by `.github/workflows/site.yml`. Everything students run lives outside `docs/`.
 
 Write for a student working through the course, not for whoever maintains the template. Concrete labs and pages a student can follow from start to finish are worth more than meta documentation.
 
@@ -16,7 +16,7 @@ Keep each kind of file in the folder listed for it.
 
 | Path | Published? | Put here |
 |------|------------|----------|
-| `docs/README.md` | Yes | Home page with the course path table |
+| `docs/index.md` | Yes | Home page with the course path table |
 | `docs/guide/` | Yes | Guide pages: concepts, figures, worked examples. Reading only. |
 | `docs/labs/` | Yes | Lab writeups only (`lab-NN-*-overview.md`) |
 | `docs/reference/` | Yes | Optional lookup pages: cheat sheets, troubleshooting tables |
@@ -26,15 +26,15 @@ Keep each kind of file in the folder listed for it.
 | `notebooks/` | No | Exploratory or assignment notebooks |
 | `data/`, `figures/` | No | Shared datasets and source figures |
 
-The site is wired up by `docs/index.html`, `docs/_sidebar.md` and `docs/_navbar.md`. Write math as `$inline$` or `$$display$$`. The `{{...}}` tokens in the sample pages (course id, title and description) are filled in by `scripts/init-template.py`; see `TEMPLATE.md`.
+Three files wire up the site. `docs/_quarto.yml` holds the site settings, sidebar, navbar and per-page PDFs; `docs/_quarto-pdf.yml` builds the whole course as one PDF; and `docs/_filters/course.lua` turns `<details>` answers into collapsed callouts (in PDFs it moves them to an Answers section at the end of each page). Write math as `$inline$` or `$$display$$`. The `{{...}}` tokens in the sample pages (course id, title and description) are filled in by `scripts/init-template.py`; see `TEMPLATE.md`.
 
 ## Course structure
 
-Every course follows the same shape, so a student always knows whether they should be reading or doing, and what comes next. The sample pages show it: `docs/README.md`, `docs/guide/getting-started.md` and `docs/labs/lab-01-overview.md`.
+Every course follows the same shape, so a student always knows whether they should be reading or doing, and what comes next. The sample pages show it: `docs/index.md`, `docs/guide/getting-started.md` and `docs/labs/lab-01-overview.md`.
 
 ### Home page
 
-`docs/README.md` says who the course is for, the prerequisites and the total time, then has a numbered course path table. Every course uses the same table format:
+`docs/index.md` says who the course is for, the prerequisites and the total time, then has a numbered course path table. Every course uses the same table format:
 
 ```
 | # | | What | Time |
@@ -48,7 +48,7 @@ Every course follows the same shape, so a student always knows whether they shou
 - The row times add up to the total time stated on the home page. Leave optional lab parts out of the row times.
 - Lab titles take the form "Lab 01: Title" in the table, in the lab page's `#` header and in the sidebar.
 
-`docs/_sidebar.md` lists the same pages in the same order. The Previous and Next links at the bottom of each page (the docsify-pagination plugin in `docs/index.html`) follow the sidebar, so they walk the course path too.
+The sidebar in `docs/_quarto.yml` and the chapter list in `docs/_quarto-pdf.yml` list the same pages in the same order. The Previous and Next links at the bottom of each page (`page-navigation: true` in `docs/_quarto.yml`) follow the sidebar, so they walk the course path too.
 
 ### Guide pages
 
@@ -68,7 +68,7 @@ Every course follows the same shape, so a student always knows whether they shou
    2. Questions, if there are any. Ask only what the student can answer from their own work, and give each one a collapsed answer or a pointer to the step that answers it.
    3. Submit: what to submit, or "Nothing to submit."
 7. Going further (optional), if you have extra reading or experiments that no part depends on.
-8. A last line, "Next on the [Course path](README.md#course-path): …", that names the next row.
+8. A last line, "Next on the [Course path](../index.md#course-path): …", that names the next row.
 
 Inside the parts:
 
@@ -117,24 +117,24 @@ Labs are the main unit of coursework. Name them `lab-NN-short-name` (for example
    - `results/`: local outputs
    - `requirements.txt` or tool notes when needed
 2. Add `docs/labs/<lab-id>-overview.md` in the writeup shape above.
-3. Add a Do row to the course path table on the home page, in the format above, and an entry "Lab NN: Title" in `docs/_sidebar.md` at the same position. Update the row times and the total time so they still add up. Add the lab to `_navbar.md` only if it belongs in the top nav.
+3. Add a Do row to the course path table on the home page, in the format above. Add an entry "Lab NN: Title" at the same position in the sidebar in `docs/_quarto.yml`, and the writeup to the chapters in `docs/_quarto-pdf.yml`. Update the row times and the total time so they still add up. Add the lab to the navbar in `docs/_quarto.yml` only if it belongs in the top nav.
 4. Cross-link: the writeup links to `labs/<lab-id>/` on GitHub, and the package README links to `docs/labs/<lab-id>-overview.md`.
 
-Don't paste long HDL into Docsify pages. Link to the files under `labs/` instead.
+Don't paste long HDL into site pages. Link to the files under `labs/` instead.
 
 ## Adding a guide page
 
 1. Add a kebab-case Markdown file under `docs/guide/` (for example `yosys-synth.md`).
-2. Add it to a Read row in the course path table, and to `docs/_sidebar.md` at the same position.
+2. Add it to a Read row in the course path table, to the sidebar in `docs/_quarto.yml`, and to the chapters in `docs/_quarto-pdf.yml`, at the same position in each.
 3. Put images in `docs/assets/img/`.
 4. Link to `labs/` and `scripts/` with GitHub URLs (`https://github.com/uoftasic/<course-id>/tree/main/labs/...`).
 
-Docsify runs with `relativePath: false`, its default (`docs/index.html` doesn't change it). With that setting, page links and images resolve from different places:
+Quarto resolves page links and images the same way: relative to the page they're written in.
 
-- Links to other pages are relative to `docs/`, from any page: `guide/yosys-synth.md`, `labs/lab-01-overview.md`.
-- Images are relative to the page they're on: `../assets/img/foo.png` from a page in `docs/guide/` or `docs/labs/`, and `assets/img/foo.png` from `docs/README.md`.
+- From a page in `docs/guide/` or `docs/labs/`, another page is `../labs/lab-01-overview.md` or `../guide/yosys-synth.md`, the home page is `../index.md`, and an image is `../assets/img/foo.png`.
+- From `docs/index.md`, they're `guide/yosys-synth.md`, `labs/lab-01-overview.md` and `assets/img/foo.png`.
 
-The link check in `.github/workflows/docs-link-check.yml` follows the same rules.
+The link check in `.github/workflows/docs-link-check.yml` reads the Markdown with the same rules, and `scripts/check_site.py` checks every local link and anchor in the rendered site when `.github/workflows/site.yml` builds it.
 
 ## Pedagogy checklist
 
@@ -157,7 +157,7 @@ The link check in `.github/workflows/docs-link-check.yml` follows the same rules
 - Python helpers and graders go under `labs/<id>/src/` or `scripts/`. List entry points in the nearest `README.md`.
 - SystemVerilog/Verilog goes under `labs/<id>/src/`, or `rtl/` and `tb/` if you split them. Stay consistent within the course.
 - Heavy outputs (GDS, large FSDB/VCD, PDK caches) go in a local `results/` or in LFS, never under `docs/`.
-- Preview the site locally with `npx docsify-cli serve docs`, then open http://localhost:3000.
+- Preview the site locally with `quarto preview docs`, then open http://localhost:4200.
 
 ## Don't
 

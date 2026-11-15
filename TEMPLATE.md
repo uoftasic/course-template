@@ -31,7 +31,7 @@ Add `--dry-run` to see what it would change without writing anything.
 - [ ] Repo created under `uoftasic`, named the same as `{{COURSE_ID}}`
 - [ ] `scripts/init-template.py` run (or the three tokens replaced by hand)
 - [ ] Pushed to `main`
-- [ ] Pages: **Settings → Pages → `main` / `/docs`**
+- [ ] Pages: **Settings → Pages → Source: GitHub Actions** (`.github/workflows/site.yml` builds `docs/` with Quarto)
 - [ ] Live at `https://uoftasic.com/<course-id>/` (org Pages; the hub is https://edu.uoftasic.com/)
 - [ ] Sidebar goes Home → Getting started → Lab 01: Starter script
 - [ ] Math and the sample figure render on the Getting started page
@@ -46,4 +46,4 @@ Use a course id the team already follows (`ic###`, `ad###`, `dd###`) or a clear 
 
 ## Related
 
-Each course made from this template is published at `https://uoftasic.com/<course-id>/`, with Docsify pages under `docs/` (no build step) and its runnable code in `labs/` and `scripts/`. The education hub is https://edu.uoftasic.com/.
+Each course made from this template is published at `https://uoftasic.com/<course-id>/`, with its Quarto site under `docs/` and its runnable code in `labs/` and `scripts/`. The education hub is https://edu.uoftasic.com/.
