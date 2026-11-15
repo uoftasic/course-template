@@ -24,7 +24,7 @@ You'll run a starter Python script, then change the message it prints and predic
 
 ## Before you start
 
-- Read [Getting started](guide/getting-started.md).
+- Read [Getting started](../guide/getting-started.md).
 - You need git, Python 3.10 or newer, and a clone of the course repo:
 
   ```bash
@@ -178,4 +178,4 @@ This starter doesn't write any files. When a lab does write large outputs, such 
   "## Going further (optional)" here, before the Next line.
 -->
 
-Next on the [Course path](README.md#course-path): _the next row, with links to its guide pages or lab._
+Next on the [Course path](../index.md#course-path): _the next row, with links to its guide pages or lab._

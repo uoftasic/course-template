@@ -8,16 +8,16 @@
   one-line pointer here. Replace this page with your course's first reading.
 -->
 
-This page explains how the course is laid out and how its pages show math and figures. Read it before [Lab 01: Starter script](labs/lab-01-overview.md).
+This page explains how the course is laid out and how its pages show math and figures. Read it before [Lab 01: Starter script](../labs/lab-01-overview.md).
 
 ## Course layout
 
-The [course path](README.md#course-path) on the home page lists every page in the order you should work through them. Each row is one of two kinds:
+The [course path](../index.md#course-path) on the home page lists every page in the order you should work through them. Each row is one of two kinds:
 
 - A Read row points to guide pages like this one. They explain the ideas with figures and worked examples. You don't need a terminal open to read them.
 - A Do row points to a lab writeup. Labs are where you run things.
 
-The files a lab runs (code, data, and any scripts that check your results) are in the course's [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) under `labs/`. This site only has the writeups. You'll run your first script, `labs/lab-01/src/main.py`, in [Lab 01](labs/lab-01-overview.md), Part 2.
+The files a lab runs (code, data, and any scripts that check your results) are in the course's [GitHub repo](https://github.com/uoftasic/{{COURSE_ID}}) under `labs/`. This site only has the writeups. You'll run your first script, `labs/lab-01/src/main.py`, in [Lab 01](../labs/lab-01-overview.md), Part 2.
 
 ## Lab structure
 
