@@ -119,7 +119,7 @@ Labs are the main unit of coursework. Name them `lab-NN-short-name` (for example
 2. Add `docs/labs/<lab-id>-overview.md` in the writeup shape above.
 3. Add a Do row to the course path table on the home page, in the format above. Add an entry "Lab NN: Title" at the same position in the sidebar in `docs/_quarto.yml`, and the writeup to the chapters in `docs/_quarto-pdf.yml`. Update the row times and the total time so they still add up. Add the lab to the navbar in `docs/_quarto.yml` only if it belongs in the top nav.
 4. Cross-link: the writeup links to `labs/<lab-id>/` on GitHub, and the package README links to `docs/labs/<lab-id>-overview.md`.
-5. If the lab has a reference solution and a checker, check both in CI: the solution must pass and the starter must fail. [REFERENCE-SOLUTION-CI.md](REFERENCE-SOLUTION-CI.md) says how, with two courses' workflows as examples.
+5. If the lab has a reference solution and a checker, run the checker in CI on both the solution and the starter: the solution must pass and the starter must fail. [REFERENCE-SOLUTION-CI.md](REFERENCE-SOLUTION-CI.md) says how, with two courses' workflows as examples.
 
 Don't paste long HDL into site pages. Link to the files under `labs/` instead.
 
