@@ -30,7 +30,7 @@ Check each lab from both sides, the way a student's work is graded:
 |---|---|---|
 | the reference solution's check | PASS | the solution still does the lab |
 | the starter's check | FAIL, for the reason the lab intends | a check that also passes the untouched starter grades nothing |
-| the checker's own self-test, if it has one | PASS | proves each verdict class still fires on known inputs, so a broken checker can't report every lab as passing |
+| the checker's own self-test, if it has one | PASS | shows that each verdict class still fires on known inputs, so a broken checker can't report every lab as passing |
 
 Make the starter's FAIL specific. DD105-A's labs plant bugs in a design, and the starter's test
 misses the lab's bug, so CI requires the verdict `VERDICT: FAIL -- your test passes <bug> too.` A
@@ -61,8 +61,8 @@ output on the course's pages came from. DD105-A pins
   tables. Its workflow's comments give the reason: run as root with no library tables, the same
   board gives different warning counts (the SKY130 breakout's ERC warnings go from 103 to 236).
 - DD105-A's `scripts/ci/in-image.sh` runs with `--cpus 2 --memory 3g` and your uid and gid, the
-  limits every time on its pages was measured with. A CI time then compares with the pages, and a
-  build that outgrows 3 GB fails in CI as it would for a student.
+  limits that every time on its pages was measured with. A time from CI can then be compared with
+  the times on the pages, and a build that outgrows 3 GB fails in CI as it would for a student.
 
 **Put every step in a script, and call it from the workflow.** Then each step is one command that
 you can run on your own machine with Docker to rehearse it. DD105-A's steps are all
@@ -101,8 +101,8 @@ on:
 ```
 
 Both examples use these triggers. DD105-A adds `third_party/**` (its UVM library) and
-`scripts/ci/**` (its CI scripts) to the paths. The weekly run is the one that catches what moves
-outside the repo, which no push or pull request triggers.
+`scripts/ci/**` (its CI scripts) to the paths. The weekly run catches changes outside the repo,
+which no push or pull request triggers.
 
 ## Jobs and minutes
 
