@@ -3,7 +3,7 @@
 A course whose labs have a starter, a reference solution and a checker should run all three in CI.
 This page says what to check, how to set the job up, and what it costs, with two courses as worked
 examples: DD105-A, whose labs build UVM testbenches with Verilator in the 11.7 GB workbench image,
-and PB101, whose labs check KiCad boards in KiCad's own image.
+and PCB101, whose labs check KiCad boards in KiCad's own image.
 
 Nothing on this page goes on the course site. The workflow lives in `.github/workflows/labs.yml`,
 next to `site.yml`.
@@ -43,7 +43,7 @@ runs `make check`, and puts the starter's files back; Lab 07's solution has its 
 runs from its own folder.
 
 Add anything the course as a whole depends on. DD105-A also runs its reference environment, which
-must catch all 15 planted bugs, and PB101 runs its board checker on four boards whose verdicts are
+must catch all 15 planted bugs, and PCB101 runs its board checker on four boards whose verdicts are
 known before it checks any lab.
 
 ## Running the checks in the course image
@@ -51,23 +51,20 @@ known before it checks any lab.
 **Use the course's image, pinned by digest.** A tag can be moved to another image, while a digest
 names exactly one, so pinning the digest makes CI run the same tool versions that every expected
 output on the course's pages came from. DD105-A pins
-`hpretl/iic-osic-tools@sha256:3c371645…` in the workflow's `env`, and PB101 keeps
-`kicad/kicad:10.0.8@sha256:3f4a0178…` in `labs/common/kicad-image.txt`, which its wrapper reads.
+`hpretl/iic-osic-tools@sha256:3c371645…` in the workflow's `env`, and PCB101 keeps
+`kicad/kicad:10.0.5@sha256:182c8005…` in `labs/common/kicad-image.txt`, which its wrapper reads.
 
 **Run the image the way students do.** Use `docker run` from a script rather than the job's
 `container:` setting, and pass the user and limits students have:
 
-- PB101's `labs/common/kicad.sh` runs KiCad as your own uid with the image's default library
-  tables. Its workflow's comments give the reason: run as root with no library tables, the same
-  board gives different warning counts (the SKY130 breakout's ERC warnings go from 103 to 236).
+- PCB101's `labs/common/kicad.sh` runs KiCad as your own uid with the image's default library
+  tables. The comments in PCB101's `labs.yml` give the reason. When KiCad runs as root with no library tables, the same board gives different warning counts (the SKY130 breakout's ERC warnings go from 97 to 233).
 - DD105-A's `scripts/ci/in-image.sh` runs with `--cpus 2 --memory 3g` and your uid and gid, the
   limits that every time on its pages was measured with. A time from CI can then be compared with
   the times on the pages, and a build that outgrows 3 GB fails in CI as it would for a student.
 
 **Put every step in a script, and call it from the workflow.** Then each step is one command that
-you can run on your own machine with Docker to rehearse it. DD105-A's steps are all
-`scripts/ci/in-image.sh scripts/ci/check-labs.sh <step>`, and PB101's are
-`labs/common/kicad.sh python3 <script>`. Rehearse every step before you push the workflow.
+you can run on your own machine with Docker to rehearse it. DD105-A's check steps are all `scripts/ci/in-image.sh scripts/ci/check-labs.sh <step>`. PCB101's are `labs/common/kicad.sh python3 <script>`, except Lab 05's self-test, which starts its own containers of the KiCad and KiBot images and so runs on the runner with plain `python3`. Rehearse every step before you push the workflow.
 
 **Make room for a big image.** GitHub documents 14 GB of SSD for its standard Linux runners
 (`ubuntu-latest` and `ubuntu-24.04`), for public and private repositories alike. DD105-A's image is
@@ -75,7 +72,7 @@ you can run on your own machine with Docker to rehearse it. DD105-A's steps are 
 `jlumbroso/free-disk-space`, pinned by commit, which removes preinstalled toolchains (Android,
 .NET, Haskell, and the runner's cached Docker images), and then fails with a clear message if less
 than 20 GB is free. It skips that action's apt removals, which its README says are the slow part.
-PB101 pulls the KiCad image without freeing anything; its wrapper gives the download as 812 MB.
+PCB101 pulls its images without freeing anything. Its wrapper gives the KiCad image's download as 808 MB, and Lab 05's self-test also pulls KiBot's image, a download of 1,347 MB.
 
 **Pin every action by commit.** A tag on a third-party action can be moved to different code. Write
 the tag in a comment beside the commit, as DD105-A does:
@@ -84,7 +81,7 @@ the tag in a comment beside the commit, as DD105-A does:
 **Keep going after a failure.** Give each lab its own step, with `if: success() || failure()` on
 every step after the first, so one run reports every lab. DD105-A writes one `CI:` line per step
 into the job summary, and uploads the failed step's logs, which its script leaves in place when a
-check fails. PB101 uploads its reports on every run.
+check fails. PCB101 uploads its reports on every run.
 
 ## Triggers
 
@@ -143,5 +140,5 @@ measure.
 - DD105-A: [`.github/workflows/labs.yml`](https://github.com/uoftasic/dd105-a/blob/main/.github/workflows/labs.yml),
   with [`scripts/ci/check-labs.sh`](https://github.com/uoftasic/dd105-a/blob/main/scripts/ci/check-labs.sh)
   and [`scripts/ci/in-image.sh`](https://github.com/uoftasic/dd105-a/blob/main/scripts/ci/in-image.sh).
-- PB101: [`.github/workflows/labs.yml`](https://github.com/uoftasic/pb101/blob/main/.github/workflows/labs.yml),
-  with [`labs/common/kicad.sh`](https://github.com/uoftasic/pb101/blob/main/labs/common/kicad.sh).
+- PCB101: [`.github/workflows/labs.yml`](https://github.com/uoftasic/pcb101/blob/main/.github/workflows/labs.yml),
+  with [`labs/common/kicad.sh`](https://github.com/uoftasic/pcb101/blob/main/labs/common/kicad.sh).
